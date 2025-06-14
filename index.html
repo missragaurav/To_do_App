@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <h1><img src="hi.jpeg"></h1>
+        <input type="text" id="inputF" placeholder="write here something.....">
+        <button class="btn">click me</button>
+        <div class="todoList"></div>
+        <!-- <p id="todoF"></p> -->
+    </div>
+
+    <script>
+
+        let inputE = document.getElementById("inputF");
+        console.log(inputE);
+
+        let ClickBtn = document.querySelector(".btn");
+        console.log(ClickBtn);
+
+       // let toDoFirst = document.getElementById("todoF");
+
+        let todoEle = document.querySelector(".todoList");
+
+
+
+
+        const addTodo =()=>{
+            console.log(inputE.value);
+            //toDoFirst.textContent = inputE.value;
+            let pEle =  document.createElement("p");
+            pEle.textContent = inputE.value;
+            console.log(pEle);
+
+            todoEle.append(pEle);
+
+
+        };
+        ClickBtn.addEventListener("click",()=>{
+            addTodo();
+        });
+
+        todoEle.addEventListener('click',(event)=>{
+            console.log(event.target);
+
+            let currE = event.target;
+            currE.remove();
+
+        })
+
+
+    </script>
+</body>
+</html>
